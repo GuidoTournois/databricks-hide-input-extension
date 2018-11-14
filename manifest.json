@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+
+  "name": "hide_password",
+  "description": "This extension makes your password hidden",
+  "version": "1.1",
+
+  "icons": { "16": "IM.png",
+           "48": "IM.png",
+          "128": "IM.png" },  
+
+"browser_action": {
+    "default_icon": "IM.png"
+},
+  "content_scripts": [
+    {
+      "matches": ["https://westeurope.azuredatabricks.net/*"],
+      "js": ["jquery-3.3.1.min.js", "hidden.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
